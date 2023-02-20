@@ -1,5 +1,6 @@
 namespace AzurePipelines.Toolkit.Variables;
 
+using AzurePipelines.Toolkit.Models;
 using AzurePipelines.Toolkit.Utilities;
 
 /// <inheritdoc />
@@ -21,7 +22,7 @@ internal sealed class AgentVariables : IAgentVariables
     public string? JobName => EnvironmentInfo.GetVariable("AGENT_JOBNAME");
 
     /// <inheritdoc />
-    public string? JobStatus => EnvironmentInfo.GetVariable("AGENT_JOBSTATUS");
+    public AgentJobStatus? JobStatus => EnvironmentInfo.GetVariable<AgentJobStatus?>("AGENT_JOBSTATUS");
 
     /// <inheritdoc />
     public string? MachineName => EnvironmentInfo.GetVariable("AGENT_MACHINENAME");

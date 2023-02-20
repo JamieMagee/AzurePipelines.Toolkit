@@ -1,6 +1,7 @@
 namespace AzurePipelines.Toolkit.Commands;
 
 using AzurePipelines.Toolkit.Extensions;
+using AzurePipelines.Toolkit.Models;
 
 /// <inheritdoc />
 internal sealed class TaskCommands : ITaskCommands
@@ -13,13 +14,13 @@ internal sealed class TaskCommands : ITaskCommands
     }
 
     /// <inheritdoc />
-    public void AddAttachment(string path, string type, string name)
+    public void AddAttachment(string path, AttachmentType type, string name)
     {
         this.toolkit.WriteCommand(
             "task.setvariable",
             path,
             new Dictionary<string, object>()
-                .AddPair("type", type)
+                .AddPair("type", type.GetText())
                 .AddPair("name", name));
     }
 
@@ -66,7 +67,7 @@ internal sealed class TaskCommands : ITaskCommands
     /// <inheritdoc />
     public void LogIssue(
         string message,
-        string type,
+        IssueType type,
         string? sourcePath = default,
         uint? lineNumber = default,
         uint? columnNumber = default,
@@ -76,7 +77,7 @@ internal sealed class TaskCommands : ITaskCommands
             "task.logissue",
             message,
             new Dictionary<string, object>()
-                .AddPair("type", type)
+                .AddPair("type", type.GetText())
                 .AddPairWhenValueNotNull("sourcepath", sourcePath)
                 .AddPairWhenValueNotNull("linenumber", lineNumber)
                 .AddPairWhenValueNotNull("columnnumber", columnNumber)
@@ -93,7 +94,7 @@ internal sealed class TaskCommands : ITaskCommands
     public void SetEndpoint(
         string value,
         string id,
-        string field,
+        EndpointField field,
         string? key = default)
     {
         this.toolkit.WriteCommand(
@@ -101,7 +102,7 @@ internal sealed class TaskCommands : ITaskCommands
             value,
             new Dictionary<string, object>()
                 .AddPair("id", id)
-                .AddPair("field", field)
+                .AddPair("field", field.GetText())
                 .AddPairWhenValueNotNull("key", key));
     }
 

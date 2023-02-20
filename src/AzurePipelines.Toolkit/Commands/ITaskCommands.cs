@@ -1,5 +1,7 @@
 namespace AzurePipelines.Toolkit.Commands;
 
+using AzurePipelines.Toolkit.Models;
+
 /// <summary>
 /// </summary>
 public interface ITaskCommands
@@ -9,7 +11,7 @@ public interface ITaskCommands
     /// <param name="path"></param>
     /// <param name="type"></param>
     /// <param name="name"></param>
-    void AddAttachment(string path, string type, string name);
+    void AddAttachment(string path, AttachmentType type, string name);
 
     /// <summary>
     /// </summary>
@@ -53,7 +55,7 @@ public interface ITaskCommands
     /// <param name="code"></param>
     void LogIssue(
         string message,
-        string type,
+        IssueType type,
         string? sourcePath = default,
         uint? lineNumber = default,
         uint? columnNumber = default,
@@ -74,7 +76,7 @@ public interface ITaskCommands
     void SetEndpoint(
         string value,
         string id,
-        string field,
+        EndpointField field,
         string? key = default);
 
     /// <summary>
@@ -102,6 +104,8 @@ public interface ITaskCommands
     /// <param name="path"></param>
     void UploadFile(string path);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// </summary>
+    /// <param name="path"></param>
     void UploadSummary(string path);
 }

@@ -3,7 +3,7 @@ namespace AzurePipelines.Toolkit.Test.Commands;
 using Moq;
 using Xunit;
 
-public class FormattingCommandsTests
+public sealed class FormattingCommandsTests
 {
     private readonly Mock<Action<string>> sink;
     private readonly IAzurePipelinesToolkit toolkit;

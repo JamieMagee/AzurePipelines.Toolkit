@@ -1,9 +1,12 @@
 namespace AzurePipelines.Toolkit.Test.Commands;
 
+using AzurePipelines.Toolkit.Extensions;
+using AzurePipelines.Toolkit.Models;
+using AzurePipelines.Toolkit.Test.Commands.TestData;
 using Moq;
 using Xunit;
 
-public class ArtifactCommandsTests
+public sealed class ArtifactCommandsTests
 {
     private readonly Mock<Action<string>> sink;
     private readonly IAzurePipelinesToolkit toolkit;
@@ -15,18 +18,18 @@ public class ArtifactCommandsTests
     }
 
     [Theory]
-    [InlineData("#/1/build", "MyServerDrop", "container")]
-    public void AssociateTests(string path, string artifactName, string type)
+    [MemberData(nameof(ArtifactCommandsTestData.AssociateData), MemberType = typeof(ArtifactCommandsTestData))]
+    public void AssociateTests(string path, string artifactName, ArtifactType type)
     {
         this.toolkit.Artifact.Associate(path, artifactName, type);
 
         this.sink.Verify(
-            x => x.Invoke($"##vso[artifact.associate artifactname={artifactName};type={type}]{path}"),
+            x => x.Invoke($"##vso[artifact.associate artifactname={artifactName};type={type.GetText()}]{path}"),
             Times.Once);
     }
 
     [Theory]
-    [InlineData("c:\\testresult.trx", "testresult", "uploadedresult")]
+    [MemberData(nameof(ArtifactCommandsTestData.UploadData), MemberType = typeof(ArtifactCommandsTestData))]
     public void UploadTests(string path, string containerFolder, string artifactName)
     {
         this.toolkit.Artifact.Upload(path, artifactName, containerFolder);

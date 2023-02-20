@@ -1,6 +1,7 @@
 namespace AzurePipelines.Toolkit.Commands;
 
 using AzurePipelines.Toolkit.Extensions;
+using AzurePipelines.Toolkit.Models;
 
 /// <inheritdoc />
 internal sealed class ArtifactCommands : IArtifactCommands
@@ -13,14 +14,14 @@ internal sealed class ArtifactCommands : IArtifactCommands
     }
 
     /// <inheritdoc />
-    public void Associate(string path, string artifactName, string type)
+    public void Associate(string path, string artifactName, ArtifactType type)
     {
         this.toolkit.WriteCommand(
             "artifact.associate",
             path,
             new Dictionary<string, object>()
                 .AddPair("artifactname", artifactName)
-                .AddPair("type", type));
+                .AddPair("type", type.GetText()));
     }
 
     /// <inheritdoc />

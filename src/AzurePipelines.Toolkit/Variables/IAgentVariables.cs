@@ -1,5 +1,7 @@
 namespace AzurePipelines.Toolkit.Variables;
 
+using AzurePipelines.Toolkit.Models;
+
 /// <summary>
 /// </summary>
 public interface IAgentVariables
@@ -53,7 +55,7 @@ public interface IAgentVariables
     /// <summary>
     ///     The status of the build.
     /// </summary>
-    string? JobStatus { get; }
+    AgentJobStatus? JobStatus { get; }
 
     /// <summary>
     ///     The name of the machine on which the agent is installed.

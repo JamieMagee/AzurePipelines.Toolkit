@@ -18,7 +18,7 @@ internal sealed class FormattingCommands : IFormattingCommands
     /// <inheritdoc />
     public void EndGroup()
     {
-        this.sink($"##[endgroup]");
+        this.sink("##[endgroup]");
     }
 
     /// <inheritdoc />
