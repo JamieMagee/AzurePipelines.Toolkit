@@ -4,12 +4,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1D9AD62B-68A0-452C-B0F4-8486D3D45670}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzurePipelines.Toolkit", "src\AzurePipelines.Toolkit\AzurePipelines.Toolkit.csproj", "{EB094E5B-EDFF-4A31-8E50-A152306909A2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{71B440D8-4225-4A28-8A49-47DF450F9916}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzurePipelines.Toolkit.Test", "test\AzurePipelines.Toolkit.Test\AzurePipelines.Toolkit.Test.csproj", "{0BF419C4-26E0-4AAA-AA15-41E70A37C6E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzurePipelines.Toolkit.MSBuild", "src\AzurePipelines.Toolkit.MSBuild\AzurePipelines.Toolkit.MSBuild.csproj", "{D8CCE0DF-E97D-4421-8787-12D4FDE11C72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{83501ACF-0A11-4537-851D-05E5F7ACC2B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CAA8EF41-5FBC-4C80-A10E-1F6CC3D818F6}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+		Directory.Build.props = Directory.Build.props
+		dotnet-tools.json = dotnet-tools.json
+		global.json = global.json
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+		renovate.json = renovate.json
+		Directory.Build.targets = Directory.Build.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,9 +47,14 @@ Global
 		{0BF419C4-26E0-4AAA-AA15-41E70A37C6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BF419C4-26E0-4AAA-AA15-41E70A37C6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BF419C4-26E0-4AAA-AA15-41E70A37C6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8CCE0DF-E97D-4421-8787-12D4FDE11C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8CCE0DF-E97D-4421-8787-12D4FDE11C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8CCE0DF-E97D-4421-8787-12D4FDE11C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8CCE0DF-E97D-4421-8787-12D4FDE11C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EB094E5B-EDFF-4A31-8E50-A152306909A2} = {1D9AD62B-68A0-452C-B0F4-8486D3D45670}
 		{0BF419C4-26E0-4AAA-AA15-41E70A37C6E7} = {71B440D8-4225-4A28-8A49-47DF450F9916}
+		{D8CCE0DF-E97D-4421-8787-12D4FDE11C72} = {1D9AD62B-68A0-452C-B0F4-8486D3D45670}
 	EndGlobalSection
 EndGlobal
