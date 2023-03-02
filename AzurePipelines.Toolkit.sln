@@ -30,6 +30,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.targets = Directory.Build.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{0B7636CE-C21A-4A76-81FB-32730EEE6E41}"
+	ProjectSection(SolutionItems) = preProject
+		.github\release-drafter.yml = .github\release-drafter.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{6EE05658-8D4D-41BC-9DB2-9E2872AF9C28}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+		.github\workflows\codeql.yml = .github\workflows\codeql.yml
+		.github\workflows\release-drafter.yml = .github\workflows\release-drafter.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,5 +68,7 @@ Global
 		{EB094E5B-EDFF-4A31-8E50-A152306909A2} = {1D9AD62B-68A0-452C-B0F4-8486D3D45670}
 		{0BF419C4-26E0-4AAA-AA15-41E70A37C6E7} = {71B440D8-4225-4A28-8A49-47DF450F9916}
 		{D8CCE0DF-E97D-4421-8787-12D4FDE11C72} = {1D9AD62B-68A0-452C-B0F4-8486D3D45670}
+		{0B7636CE-C21A-4A76-81FB-32730EEE6E41} = {CAA8EF41-5FBC-4C80-A10E-1F6CC3D818F6}
+		{6EE05658-8D4D-41BC-9DB2-9E2872AF9C28} = {0B7636CE-C21A-4A76-81FB-32730EEE6E41}
 	EndGlobalSection
 EndGlobal
