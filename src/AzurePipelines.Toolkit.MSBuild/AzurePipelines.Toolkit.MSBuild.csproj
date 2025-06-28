@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.12.6" CopyLocal="false" Publish="false" ExcludeAssets="runtime" />
-    <PackageReference Include="Microsoft.Build.Framework" Version="17.12.6" CopyLocal="false" Publish="false" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.14.8" CopyLocal="false" Publish="false" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="17.14.8" CopyLocal="false" Publish="false" ExcludeAssets="runtime" />
   </ItemGroup>
 
 </Project>
